@@ -17,7 +17,7 @@ public class Training {
         while(true){
             double yawSpeed = kp * (sim.getRobotAngle() - targetAngle);
             double ySpeed = (System.currentTimeMillis() - startTime < 1750) ? -0.85 : 0.0;
-            sim.setRobotSpeed(0, ySpeed, -yawSpeed);
+            sim.setRobotSpeed(10, ySpeed, -yawSpeed);
             Thread.sleep(10);
         }
     }
