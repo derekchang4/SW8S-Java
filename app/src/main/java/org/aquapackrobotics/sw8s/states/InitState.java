@@ -9,6 +9,7 @@ public class InitState extends State {
 
     // TODO: implement
     public void onEnter() {
+        
     }
 
     // TODO: implement
