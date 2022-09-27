@@ -2,14 +2,19 @@ package org.aquapackrobotics.sw8s.states;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-public class InitState extends state1 {
-    public InitState(ScheduledThreadPoolExecutor pool) {
-        super(pool);
+import org.aquapackrobotics.sw8s.trainingsim.SimWindow;
+
+public class State1 extends SimState {
+    public State1(ScheduledThreadPoolExecutor pool, SimWindow window) {
+        super(pool, window);
+
+        onEnter();
+        nextState();
     }
 
     // TODO: implement
     public void onEnter() {
-        
+        window.setRobotSpeed(5, 5, 5);
     }
 
     // TODO: implement
@@ -19,12 +24,13 @@ public class InitState extends state1 {
 
     // TODO: implement
     public void onExit() {
+        window.setRobotSpeed(0,0,0);
     }
 
     // TODO: implement
     public State nextState() {
         //State2 obj2 = new State2();
         //return obj2;
-        return null;
+        return new State2(pool, window);
     }
 }

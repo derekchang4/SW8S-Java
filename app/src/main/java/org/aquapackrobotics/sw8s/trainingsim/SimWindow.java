@@ -1,3 +1,5 @@
+//This defines the methods of the robot in the simulation window
+
 package org.aquapackrobotics.sw8s.trainingsim;
 
 import javax.swing.JFrame;
@@ -64,7 +66,7 @@ public class SimWindow extends JFrame {
 
     public void setRobotSpeed(double xSpeed, double ySpeed, double yawSpeed){
         synchronized(this){
-            this.targetXVel = Math.min(1, Math.max(-1, xSpeed));
+            this.targetXVel = Math.min(1, Math.max(-1, xSpeed)); //Use these to control robot movement
             this.targetYVel = Math.min(1, Math.max(-1, ySpeed));
             this.targetYawVel = Math.min(1, Math.max(-1, yawSpeed));
         }

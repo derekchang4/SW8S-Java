@@ -1,8 +1,11 @@
-package org.aquapackrobotics.sw8s.trainingsim;
+ 
+//package org.aquapackrobotics.sw8s.trainingsim;
 
 /**
  * Vestigial, for reference only
  */
+
+/* 
 public class Training {
     public static void main(String args[]) throws Exception{
         SimWindow sim = new SimWindow();
@@ -22,3 +25,5 @@ public class Training {
         }
     }
 }
+
+*/
