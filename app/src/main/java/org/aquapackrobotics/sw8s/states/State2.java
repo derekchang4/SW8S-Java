@@ -2,7 +2,7 @@ package org.aquapackrobotics.sw8s.states;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-public class State2 extends State {
+public class State2 extends SimState {
     public State2(ScheduledThreadPoolExecutor pool) {
         super(pool);
     }
@@ -23,6 +23,6 @@ public class State2 extends State {
 
     // TODO: implement
     public State nextState() {
-        return State1.java;
+        return null;
     }
 }
