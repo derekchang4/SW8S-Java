@@ -4,6 +4,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import org.aquapackrobotics.sw8s.trainingsim.SimWindow;
 
+
 public class State1 extends SimState {
     public State1(ScheduledThreadPoolExecutor pool, SimWindow window) {
         super(pool, window);
@@ -15,15 +16,28 @@ public class State1 extends SimState {
     }
 
     // TODO: implement
+    // onEnter runs through once
     public void onEnter() {
         System.out.print("State1: onEnter-> ");
         window.setRobotSpeed(0, -2, 0);
     }
 
     // TODO: implement
+    // onPeriodic
+    int i=0;
     public boolean onPeriodic() {
         System.out.print("State1: onPeriodic-> ");
-        return false;
+        System.out.print(window.getYPos());
+
+        //if (window.getYPos > 100) {
+        //    return false;
+        //}
+        if (i>10){
+            return false;
+        }
+        i++;
+        System.out.println(i);
+        return true;
     }
 
     // TODO: implement
