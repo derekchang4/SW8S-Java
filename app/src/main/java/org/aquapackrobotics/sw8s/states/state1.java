@@ -9,16 +9,20 @@ public class State1 extends SimState {
         super(pool, window);
 
         onEnter();
+        onPeriodic();
         nextState();
+        //onExit();
     }
 
     // TODO: implement
     public void onEnter() {
-        window.setRobotSpeed(5, 5, 5);
+        System.out.print("State1: onEnter-> ");
+        window.setRobotSpeed(0, -2, 0);
     }
 
     // TODO: implement
     public boolean onPeriodic() {
+        System.out.print("State1: onPeriodic-> ");
         return false;
     }
 
@@ -31,6 +35,7 @@ public class State1 extends SimState {
     public State nextState() {
         //State2 obj2 = new State2();
         //return obj2;
+        System.out.print("State1: nextState-> ");
         return new State2(pool, window);
     }
 }
