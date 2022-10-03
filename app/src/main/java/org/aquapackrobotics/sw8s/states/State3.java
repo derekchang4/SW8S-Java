@@ -1,31 +1,22 @@
-//The first state. Go to the top of G
-//All methods called in TrainingMission
+//Down big G
 package org.aquapackrobotics.sw8s.states;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import org.aquapackrobotics.sw8s.trainingsim.SimWindow;
 
-
-public class State1 extends SimState {
-    public State1(ScheduledThreadPoolExecutor pool, SimWindow window) {
+public class State3 extends SimState {
+    public State3(ScheduledThreadPoolExecutor pool, SimWindow window) {
         super(pool, window);
-
-        
     }
 
     // TODO: implement
-    // onEnter runs through once
     public void onEnter() {
-        System.out.print("State1: onEnter-> ");
-        //window.setRobotSpeed(0, -2, 0);
+        System.out.print("[State3 Reached] --> ");
         System.out.print("("+window.getYPos()+", "+window.getYPos()+")"+" - ");
-
     }
 
     // TODO: implement
-    // onPeriodic is looped in Training Mission
-    // stops when true is returned
     public boolean onPeriodic() {
         //System.out.print(window.getYPos() );
 
@@ -33,12 +24,12 @@ public class State1 extends SimState {
         //X gets greater as you go right
         double x = window.getXPos();
         double y = window.getYPos();
-        int destx = 500;
-        int desty = 100;
+        int destx = 200;
+        int desty = 400;
 
         window.setRobotSpeed(destx-x, desty-y, 0);
 
-        if (window.getXPos() >= destx && window.getYPos() <= desty) {
+        if (window.getXPos() >= destx && window.getYPos() >= desty) {
             return true;
         }
         
@@ -47,16 +38,13 @@ public class State1 extends SimState {
 
     // TODO: implement
     public void onExit() {
-        System.out.print("Exiting State1-> ");
         window.setRobotSpeed(0,0,0);
         System.out.print("("+window.getYPos()+", "+window.getYPos()+")"+" - ");
     }
 
     // TODO: implement
     public State nextState() {
-        //State2 obj2 = new State2();
-        //return obj2;
-        System.out.print("State1: nextState-> ");
-        return new State2(pool, window);
+        System.out.print("State3: nextState-> ");
+        return null; //new State3(pool, window);
     }
 }
