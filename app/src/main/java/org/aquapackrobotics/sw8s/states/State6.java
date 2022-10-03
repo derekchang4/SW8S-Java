@@ -44,7 +44,7 @@ public class State6 extends SimState {
 
     // TODO: implement
     public State nextState() {
-        System.out.print("State6: nextState-> ");
+        System.out.println("\n G FINISHED!!!!!!");
         return null; //new State3(pool, window);
     }
 }
