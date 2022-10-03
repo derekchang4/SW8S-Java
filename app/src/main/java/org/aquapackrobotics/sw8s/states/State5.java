@@ -1,18 +1,18 @@
-//Down big G
+//Up mid G
 package org.aquapackrobotics.sw8s.states;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import org.aquapackrobotics.sw8s.trainingsim.SimWindow;
 
-public class State3 extends SimState {
-    public State3(ScheduledThreadPoolExecutor pool, SimWindow window) {
+public class State5 extends SimState {
+    public State5(ScheduledThreadPoolExecutor pool, SimWindow window) {
         super(pool, window);
     }
 
     // TODO: implement
     public void onEnter() {
-        System.out.print("[State3 Reached] --> ");
+        System.out.print("[State5 Reached] --> ");
         System.out.print("("+window.getYPos()+", "+window.getYPos()+")"+" - ");
     }
 
@@ -24,12 +24,12 @@ public class State3 extends SimState {
         //X gets greater as you go right
         double x = window.getXPos();
         double y = window.getYPos();
-        int destx = 200;
-        int desty = 400;
+        int destx = 500;
+        int desty = 250;
 
         window.setRobotSpeed(destx-x, desty-y, 0);
 
-        if (window.getXPos() >= destx && window.getYPos() >= desty) {
+        if (window.getXPos() >= destx && window.getYPos() <= desty) {
             return true;
         }
         
@@ -44,7 +44,7 @@ public class State3 extends SimState {
 
     // TODO: implement
     public State nextState() {
-        System.out.print("State3: nextState-> ");
-        return new State4(pool, window);
+        System.out.print("State5: nextState-> ");
+        return null; //new State3(pool, window);
     }
 }
