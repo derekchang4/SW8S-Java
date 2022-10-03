@@ -25,23 +25,30 @@ public class State1 extends SimState {
 
     // TODO: implement
     // onPeriodic is looped in Training Mission
-    
+    // stops when true is returned
     public boolean onPeriodic() {
         //System.out.print(window.getYPos() );
 
         //Y gets greater as you go down
         //X gets greater as you go right
-        if (window.getYPos() > 100 && window.getXPos() < 550) {
-            window.setRobotSpeed(2, -2, 0);
-            return false;
+        double x = window.getXPos();
+        double y = window.getYPos();
+        int destx = 500;
+        int desty = 100;
+
+        window.setRobotSpeed(destx-x, desty-y, 0);
+
+        if (window.getXPos() > destx && window.getYPos() < desty) {
+            return true;
         }
         
-        return true;
+        return false;
     }
 
     // TODO: implement
     public void onExit() {
         window.setRobotSpeed(0,0,0);
+        System.out.print("("+window.getYPos()+", "+window.getYPos()+")"+" - ");
     }
 
     // TODO: implement
