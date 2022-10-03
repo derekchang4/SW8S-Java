@@ -11,7 +11,7 @@ public class State2 extends SimState {
 
     // TODO: implement
     public void onEnter() {
-        
+        System.out.print("[State2 Reached] --> ");
     }
 
     // TODO: implement

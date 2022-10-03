@@ -1,3 +1,4 @@
+//Work in here for overall code
 package org.aquapackrobotics.sw8s.missions;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -21,7 +22,7 @@ public class TrainingMission extends Mission {
     // TODO: implement
     @Override
     protected State initialState() {
-        System.out.print("Hi");
+        System.out.print("TrainingMission.initialState: Hi-> ");
         //return new State(pool, sim);
         return new State1(pool, sim);
     }
@@ -29,13 +30,17 @@ public class TrainingMission extends Mission {
     // TODO: implement
     @Override
     protected void executeState(State state) {
-
+        state.onEnter();
+        System.out.print("Periodic Reached -> ");
+        while (state.onPeriodic() == false) {
+        }
+        state.onExit();
     }
 
     // TODO: implement
     @Override
     protected State nextState(State state) {
-        System.out.print("TrainingMission nextState reached");
+        System.out.print("TrainingMission nextState reached-> ");
         //InitState obj = new InitState();
         return state.nextState();
         //return null;
