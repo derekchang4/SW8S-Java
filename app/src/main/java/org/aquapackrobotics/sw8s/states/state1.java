@@ -18,7 +18,7 @@ public class State1 extends SimState {
     // onEnter runs through once
     public void onEnter() {
         System.out.print("State1: onEnter-> ");
-        window.setRobotSpeed(0, -2, 0);
+        //window.setRobotSpeed(0, -2, 0);
         System.out.print("("+window.getYPos()+", "+window.getYPos()+")"+" - ");
 
     }
@@ -27,10 +27,11 @@ public class State1 extends SimState {
     // onPeriodic is looped in Training Mission
     
     public boolean onPeriodic() {
-        //    System.out.print(window.getYPos() );
+        //System.out.print(window.getYPos() );
 
         //Y gets greater as you go down
-        if (window.getYPos() > 100 && window.getXPos() < 600) {
+        //X gets greater as you go right
+        if (window.getYPos() > 100 && window.getXPos() < 550) {
             window.setRobotSpeed(2, -2, 0);
             return false;
         }
