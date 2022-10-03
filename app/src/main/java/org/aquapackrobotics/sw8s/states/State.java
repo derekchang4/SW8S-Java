@@ -1,3 +1,5 @@
+//State machine. Don't mess with this as it serves as the bones for other states
+
 package org.aquapackrobotics.sw8s.states;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;

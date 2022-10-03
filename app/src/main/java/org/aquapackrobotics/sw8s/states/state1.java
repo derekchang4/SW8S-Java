@@ -1,3 +1,4 @@
+//The first state. Go to the top of G
 package org.aquapackrobotics.sw8s.states;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -9,10 +10,7 @@ public class State1 extends SimState {
     public State1(ScheduledThreadPoolExecutor pool, SimWindow window) {
         super(pool, window);
 
-        onEnter();
-        onPeriodic();
-        nextState();
-        //onExit();
+        
     }
 
     // TODO: implement
@@ -23,20 +21,17 @@ public class State1 extends SimState {
     }
 
     // TODO: implement
-    // onPeriodic
-    int i=0;
+    // onPeriodic is looped in Training Mission
+    
     public boolean onPeriodic() {
         System.out.print("State1: onPeriodic-> ");
         System.out.print(window.getYPos());
 
-        //if (window.getYPos > 100) {
-        //    return false;
-        //}
-        if (i>10){
+        if (window.getYPos() > 550) {
+            window.setRobotSpeed(0, -2, 0);
             return false;
         }
-        i++;
-        System.out.println(i);
+        
         return true;
     }
 
